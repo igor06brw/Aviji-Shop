@@ -6,7 +6,7 @@ import SearchInput from './SearchInput';
 
 const Nav = () => {
     return (
-        <div className="container d-inline-flex align-items-center justify-content-between">
+        <nav className="container d-inline-flex align-items-center justify-content-between">
             <Logo/>
             <ul className="nav py-5 justify-content-end ">
                 <Dropdown id="dropdownMenuLink" dataToggle="dropdown" title="Mens" data={navMens}/>
@@ -16,7 +16,7 @@ const Nav = () => {
                 </li>
             </ul>
             <SearchInput />
-        </div>
+        </nav>
     );
 }
 
