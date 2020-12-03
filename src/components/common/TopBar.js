@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Topbar = () => {
     return (
@@ -7,12 +8,12 @@ const Topbar = () => {
                 <span className="mr-2">Currency: GBP</span>
                 <i className="fas fa-sort-down"></i>
             </a>
-            <a className="nav-link text-light" href="#">Register</a>
-            <a className="nav-link text-light" href="#">Sign In</a>
-            <a className="nav-link text-light bg-success" href="#" aria-disabled="true">
+            <Link to="/register" className="nav-link text-light" >Register</Link>
+            <Link to="/login" className="nav-link text-light">Sign In</Link>
+            <Link to="/shopping" className="nav-link text-light bg-success" aria-disabled="true">
                 <i className="fas fa-shopping-cart"></i>
                 <span className="empty ml-2"> Empty</span>
-            </a>
+            </Link>
         </nav>
     );
 }
