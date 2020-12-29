@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import './App.css';
 import Header from './components/Header';
-import ProductDetail from "./components/ProductDetail";
-import Products from './components/Products';
+import ProductDetail from "./components/Products/ProductDetails/ProductDetails";
+import Products from './components/Products/Products';
 import Login from './components/Login';
 import Register from './components/Register';
 import Footer from "./components/Footer";
@@ -20,7 +20,6 @@ function App() {
           <Route path="/product-detail" component={ProductDetail} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-
         </Switch>
         <Footer />
       </div>
