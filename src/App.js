@@ -7,6 +7,7 @@ import ProductDetail from "./components/ProductDetail";
 import Products from './components/Products';
 import Login from './components/Login';
 import Register from './components/Register';
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/register" component={Register} />
 
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
