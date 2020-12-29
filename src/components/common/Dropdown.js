@@ -18,7 +18,7 @@ const Dropdown = ({id, dataToggle, title, data }) => {
             <div className="dropdown-menu" aria-labelledby={id}>
                 <div className="d-flex my-2">
                     <div className="mx-2">
-                        <h6 className="font-weight-bold">Casual </h6>
+                        <h6 className="font-weight-bold">Casual</h6>
                        
                         <a className="dropdown-item" href="#">{data[0]}</a>
                         <a className="dropdown-item" href="#">{data[1]}</a>
