@@ -1,0 +1,28 @@
+footer {
+    padding: 2em;
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-nav {
+}
+.footer-link-list {
+    padding: 0.6em 2em;
+}
+.footer-link-list:nth-of-type(3) {
+    max-width: 35%;
+}
+
+.footer-link-list > p {
+    font-size: 0.8em;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--footer-link-heading-color);
+} 
+.footer-link-list > li {
+    padding: .4em .2em;
+    font-size: 0.9em;
+    color: var(--footer-link-item-color);
+}
