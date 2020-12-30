@@ -4,8 +4,8 @@ import '../styles/Footer.css';
 
 const Footer = () => {
     return (
-        <footer className="">
-            <div className="">
+        <footer>
+            <div>
                 <nav className="footer-nav d-flex flex-row">
                     <ul className="footer-link-list list-group list-unstyled text-left">
                         <p>Your account</p>
