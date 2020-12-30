@@ -11,6 +11,7 @@ class Products extends Component {
             price: 1.23,
             dateAdded: '12-2019',
             type: 't-shirt',
+            bestseller: false,
         },
         {
             heading: 'Example t-shirt 2',
@@ -18,6 +19,7 @@ class Products extends Component {
             price: 2.23,
             dateAdded: '01-2019',
             type: 'dress',
+            bestseller: false,
         },
         {
             heading: 'Example t-shirt 3',
@@ -25,6 +27,7 @@ class Products extends Component {
             price: 3.23,
             dateAdded: '05-2020',
             type: 'hoodie',
+            bestseller: true,
         },
         {
             heading: 'Example t-shirt 4',
@@ -32,6 +35,7 @@ class Products extends Component {
             price: 4.23,
             dateAdded: '04-2020',
             type: 'dress',
+            bestseller: true,
         },
         {
             heading: 'Example t-shirt 5',
@@ -39,6 +43,7 @@ class Products extends Component {
             price: 5.23,
             dateAdded: '12-2020',
             type: 't-shirt',
+            bestseller: false,
         },
         {
             heading: 'Example boots 6',
@@ -46,6 +51,7 @@ class Products extends Component {
             price: 6.23,
             dateAdded: '12-2019',
             type: 'boots',
+            bestseller: true,
         },
     ]
     
