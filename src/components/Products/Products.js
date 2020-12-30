@@ -8,32 +8,44 @@ class Products extends Component {
         {
             heading: 'Example t-shirt 1',
             description: 'Example description 1',
-            price: 1.23
+            price: 1.23,
+            dateAdded: '12-2019',
+            type: 't-shirt',
         },
         {
             heading: 'Example t-shirt 2',
             description: 'Example description 2',
-            price: 2.23
+            price: 2.23,
+            dateAdded: '01-2019',
+            type: 'dress',
         },
         {
             heading: 'Example t-shirt 3',
             description: 'Example description 3',
-            price: 3.23
+            price: 3.23,
+            dateAdded: '05-2020',
+            type: 'hoodie',
         },
         {
             heading: 'Example t-shirt 4',
             description: 'Example description 4',
-            price: 4.23
+            price: 4.23,
+            dateAdded: '04-2020',
+            type: 'dress',
         },
         {
             heading: 'Example t-shirt 5',
             description: 'Example description 5',
-            price: 5.23
+            price: 5.23,
+            dateAdded: '12-2020',
+            type: 't-shirt',
         },
         {
-            heading: 'Example t-shirt 6',
+            heading: 'Example boots 6',
             description: 'Example description 6',
-            price: 6.23
+            price: 6.23,
+            dateAdded: '12-2019',
+            type: 'boots',
         },
     ]
     
