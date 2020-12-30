@@ -5,9 +5,9 @@ import Login from './Login/Login';
 class Auth extends Component {
     render() {
         return (
-            <div>   
-                <Register />
+            <div className="d-flex justify-content-center container">   
                 <Login />
+                <Register />
             </div>
         );
     }
