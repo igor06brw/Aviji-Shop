@@ -57,7 +57,6 @@ class Products extends Component {
     
     render() {
         const products = this.state;
-        console.log(products)
         return (
             <main className="container border-top mt-5 pl-0">
                 <nav className="nav my-3">
