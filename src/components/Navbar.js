@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './common/Nav';
-import Topbar from './common/Topbar';
+import Topbar from './common/TopBar';
 
 const Navbar = () => {
     return (
