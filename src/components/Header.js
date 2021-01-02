@@ -6,19 +6,19 @@ import descriptions from './data/description';
 
 class Header extends Component { 
     state = {
-        description: '',
+        description: 'Home',
         location: ''
     }
-
-
-    constructor(props) {
-        super(props);
-    }
-
-    componentDidUpdate(prevValue) {
-        if(prevValue !== this.props)
+    
+    componentDidMount() {
         this.findDescription(this.props.location.pathname)
     }
+    componentDidUpdate(prevValue) {
+        if(prevValue !== this.props) {
+            this.findDescription(this.props.location.pathname)
+        }
+    }
+
 
     findDescription = (event) => {
         descriptions.find(desc => {
