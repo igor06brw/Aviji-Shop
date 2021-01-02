@@ -6,7 +6,7 @@ import descriptions from './data/description';
 
 class Header extends Component { 
     state = {
-        description: 'Home',
+        description: '',
         location: ''
     }
     
@@ -24,9 +24,12 @@ class Header extends Component {
         descriptions.find(desc => {
             for(let key in desc) {
                 let __tempString = '/' + key
+                if(event === '/' && key === 'home') {
+                    this.setState({description: desc[key]})
+                    
+                }
                 if(__tempString === event) {
                     this.setState({description: desc[key]})
-                    console.log(this.state, __tempString)
                 }
             }
         })
