@@ -5,28 +5,24 @@ import './App.css';
 import ProductDetail from "./components/Products/ProductDetails/ProductDetails";
 import Products from './components/Products/Products';
 import Auth from "./components/Auth/Auth";
-import Layout from "./Layout/Layout";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 
 class App extends Component {
 
-  componentDidMount() {
-    console.log(this.props);
-  }
-
   render() {
+    console.log(this.props)
     return (
       <Router>
         <div className="App">
-            <Layout>
+          <Header></Header>
               <Switch>
                 <Route exact path="/" component={Products} />
                 <Route path="/product-detail" component={ProductDetail} />
-                <Redirect from="/register" to="/auth" />
-                <Redirect from="/login" to="/auth"  />
                 <Route path="/auth" component={Auth} />
               </Switch>
-            </Layout>
+              <Footer />
         </div>
       </Router>
     );

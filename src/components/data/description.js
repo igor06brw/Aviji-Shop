@@ -1,4 +1,4 @@
-export const descriptions = [
+const descriptions = [
     {
          auth: 'Sign in or Register'
     },
@@ -9,3 +9,5 @@ export const descriptions = [
         shopping: 'Shopping List'
     }
 ]
+
+export default descriptions;
