@@ -6,8 +6,8 @@ const Product = (props) => {
             <div className="card">
                 <img src={card1} className="card-img-top image-fit" alt="..."/>
                 <div className="card-body">
-                    <h5 className="card-title">{props.product.heading}</h5>
-                    <p className="card-text">{props.product.description}</p>
+                    <h5 className="card-title">{props.product.name}</h5>
+                    <p className="card-text">{props.product.type}</p>
                 </div>
             </div>
         </div>
