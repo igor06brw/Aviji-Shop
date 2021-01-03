@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Product from './Product/Product';
 import OutfitAPI from '../data/API';
-import ReactPagination from 'react-paginate';
+import ReactPaginate from 'react-paginate';
 import '../../styles/Products.css';
 
 
@@ -29,6 +29,16 @@ class Products extends Component {
         })
         console.log(products);
     }
+
+    handlePageClick = (data) => {
+        console.log(data);
+        const selectedPage = data.selected;
+        const offset = Math.ceil(selectedPage  * this.state.perPage);
+
+        this.setState({ offset: offset }, () => {
+            this.getAllProducts(OutfitAPI.allOutfits());
+        })
+    }
     
     render() {
         return (
@@ -39,8 +49,25 @@ class Products extends Component {
                     <a className="nav-link text-success" href="#">Best sellers</a>
                     <a className="nav-link text-success" href="#">Special offers</a>
                 </nav>
-                <div className="row row-cols-1 row-cols-md-3">
+                <div className="row row-cols-1 row-cols-md-3 justify-content-center">
                     {this.state.productsPerPage}
+                    <ReactPaginate
+                        previousLabel={"«"}
+                        nextLabel={"»"}
+                        breakLabel={"..."}
+                        breakClassName={"break-me"}
+                        pageCount={this.state.pageCount}
+                        marginPagesDisplayed={2}
+                        pageRangeDisplayed={5}
+                        onPageChange={this.handlePageClick}
+                        containerClassName={"pagination"}
+                        subContainerClassName={"page-item"}
+                        pageLinkClassName={"page-link"}
+                        activeClassName={"active"}
+                        previousLinkClassName={"page-link"}
+                        nextLinkClassName={"page-link"}
+                        disabledClassName={"page-item disabled"}/>
+                        
                 </div>
             </main>
         );
