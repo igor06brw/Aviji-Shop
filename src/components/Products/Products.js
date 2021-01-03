@@ -10,7 +10,7 @@ class Products extends Component {
     state = {
         products: [],
         offset: 0,
-        perPage: 3,
+        perPage: 6,
         currentPage: 0
     }
 
@@ -49,26 +49,27 @@ class Products extends Component {
                     <a className="nav-link text-success" href="#">Best sellers</a>
                     <a className="nav-link text-success" href="#">Special offers</a>
                 </nav>
-                <div className="row row-cols-1 row-cols-md-3 justify-content-center">
-                    {this.state.productsPerPage}
-                    <ReactPaginate
-                        previousLabel={"«"}
-                        nextLabel={"»"}
-                        breakLabel={"..."}
-                        breakClassName={"break-me"}
-                        pageCount={this.state.pageCount}
-                        marginPagesDisplayed={2}
-                        pageRangeDisplayed={5}
-                        onPageChange={this.handlePageClick}
-                        containerClassName={"pagination"}
-                        subContainerClassName={"page-item"}
-                        pageLinkClassName={"page-link"}
-                        activeClassName={"active"}
-                        previousLinkClassName={"page-link"}
-                        nextLinkClassName={"page-link"}
-                        disabledClassName={"page-item disabled"}/>
-                        
+                <div className="row row-cols-1 row-cols-md-3">
+                    {this.state.productsPerPage}    
                 </div>
+                <div className="col">
+                        <ReactPaginate
+                            previousLabel={"«"}
+                            nextLabel={"»"}
+                            breakLabel={"..."}
+                            breakClassName={"break-me"}
+                            pageCount={this.state.pageCount}
+                            marginPagesDisplayed={2}
+                            pageRangeDisplayed={5}
+                            onPageChange={this.handlePageClick}
+                            containerClassName={"pagination justify-content-center"}
+                            subContainerClassName={"page-item"}
+                            pageLinkClassName={"page-link"}
+                            activeClassName={"active"}
+                            previousLinkClassName={"page-link"}
+                            nextLinkClassName={"page-link"}
+                            disabledClassName={"page-item disabled"}/>
+                    </div>        
             </main>
         );
     }
