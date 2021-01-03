@@ -1,3 +1,12 @@
 .text-of-absolute {
     z-index: 1090;
 }
+
+.product-details {
+    bottom: 0;
+    right: 0;
+}
+.product-cart {
+    bottom: 0;
+    left: 0;
+}
