@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import card1 from '../../../assets/card/1.jpg'
+import '../../../styles/Product.css'
+
 const Product = (props) => {
     const [hover, setHover] = useState(false);
 
@@ -7,9 +9,9 @@ const Product = (props) => {
     
     if(hover === true) {
         onHoverInfo = (
-            <div>
+            <div className="position-relative text-of-absolute">
                 <img src={card1} className="card-img-top image-fit" alt="..."/>
-                <div className="card-body">
+                <div className="position-absolute card-body col bg-light border border-top-0">
                     <h5 className="card-title">{props.product.name}</h5>
                     <p className="card-text">{props.product.type}</p>
                 </div>
