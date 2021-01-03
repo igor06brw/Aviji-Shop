@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import Product from './Product/Product';
 import OutfitAPI from '../data/API';
-import '../../styles/Products.css'
+import ReactPagination from 'react-paginate';
+import '../../styles/Products.css';
+
 
 class Products extends Component {
     
     state = {
         products: [],
         offset: 0,
-        perPage: 6,
+        perPage: 3,
         currentPage: 0
-    }
-    
-    constructor(props) {
-        super(props);
     }
 
     componentDidMount() {
@@ -22,11 +20,17 @@ class Products extends Component {
 
     getAllProducts(props) {
         const products = props;
+        const slice = products.slice(this.state.offset, this.state.offset + this.state.perPage);
+        const productsPerPage = slice.map(el => <Product product={el}/>)
+
+        this.setState({
+            pageCount: Math.ceil(products.length / this.state.perPage),
+            productsPerPage
+        })
         console.log(products);
     }
     
     render() {
-        const products = this.state;
         return (
             <main className="container border-top mt-5 pl-0">
                 <nav className="nav my-3">
@@ -36,11 +40,7 @@ class Products extends Component {
                     <a className="nav-link text-success" href="#">Special offers</a>
                 </nav>
                 <div className="row row-cols-1 row-cols-md-3">
-                    {
-                        OutfitAPI.allOutfits().map(product => (
-                            <Product product={product}/>
-                        ))
-                    }
+                    {this.state.productsPerPage}
                 </div>
             </main>
         );
