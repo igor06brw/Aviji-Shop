@@ -4,7 +4,26 @@ import OutfitAPI from '../data/API';
 import '../../styles/Products.css'
 
 class Products extends Component {
+    
+    state = {
+        products: [],
+        offset: 0,
+        perPage: 6,
+        currentPage: 0
+    }
+    
+    constructor(props) {
+        super(props);
+    }
 
+    componentDidMount() {
+        this.getAllProducts(OutfitAPI.allOutfits());
+    }
+
+    getAllProducts(props) {
+        const products = props;
+        console.log(products);
+    }
     
     render() {
         const products = this.state;
