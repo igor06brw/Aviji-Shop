@@ -7,6 +7,7 @@ import Products from './components/Products/Products';
 import Auth from "./components/Auth/Auth";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Shopping from "./components/Shopping/Shopping";
 
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
                 <Route exact path="/" component={Products} />
                 <Route path="/product-detail" component={ProductDetail} />
                 <Route path="/auth" component={Auth} />
+                <Route path="/shopping" component={Shopping} />
               </Switch>
               <Footer />
         </div>
