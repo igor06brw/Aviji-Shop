@@ -20,9 +20,11 @@ const Product = (props) => {
     if(hover === true) {
         onHoverInfo = (
             <div className="text-of-absolute animate__animated animate__fadeInDown">
-                <div className="position-absolute card-body col bg-light border border-top-0">
+                <div className="position-absolute card-body col bg-light border border-top-0 text-center">
+                    {
+                        props.product.favourite ? <p style={{fontSize: 10}}className="text-info font-weight-bold">New arrivals</p>  : null
+                    }
                     <h5 className="card-title">{props.product.name}</h5>
-                    <p className="card-text">{props.product.type}</p>
                 </div>
             </div>
         )
