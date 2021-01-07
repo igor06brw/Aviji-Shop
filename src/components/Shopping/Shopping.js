@@ -20,7 +20,7 @@ class Shopping extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.shoppingList.map(shoppingItem => (
+                        { this.shoppingList.map(shoppingItem => (
                             <ShoppingItem shoppingCart={shoppingItem}/>
                         ))}
                     </tbody>

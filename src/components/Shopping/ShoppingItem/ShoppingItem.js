@@ -7,12 +7,12 @@ const ShoppingItem = (props) => {
         <tr>
             <td headers="product" scope="row">
                 <Link to={`/product/${1}`}>
-                    <img />
-                    <h6>Example tshirt</h6>
+                    <img src={props.shoppingCart.image}/>
+                    <h6>{props.shoppingCart.name}</h6>
                 </Link>
             </td>
-            <td headers="price">$64.23</td>
-            <td headers="quantity">1</td>
+            <td headers="price">{props.shoppingCart.price}</td>
+            <td headers="quantity">{props.shoppingCart.quantity}</td>
             <td headers="actions">Delete</td>
         </tr>
     );
