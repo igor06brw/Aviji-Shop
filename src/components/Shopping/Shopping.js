@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import ShoppingItem from './ShoppingItem/ShoppingItem';
 import ShoppingOrder from './ShoppingOrder/ShoppingOrder';
-import OutfitAPI from '../data/API';
+import { connect } from 'react-redux';
 
 class Shopping extends Component {
     
 
 
     render() {
+        console.log(this.props.shopping);
         return (
             <div className="container">
                 <table class="table table-dark">
@@ -29,5 +30,7 @@ class Shopping extends Component {
     }
 }
 
-export default Shopping;
+const mapStateToProps = state => ({ shopping: state.shopping })
+
+export default connect(mapStateToProps)(Shopping);
 
