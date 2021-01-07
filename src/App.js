@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
-
+import { connect } from 'react-redux';
 import './App.css';
 import ProductDetail from "./components/Products/ProductDetails/ProductDetails";
 import Products from './components/Products/Products';
@@ -11,6 +11,9 @@ import Shopping from "./components/Shopping/Shopping";
 
 
 class App extends Component {
+  
+  
+  
   render() {
     console.log(this.props)
     return (
@@ -30,4 +33,6 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({ outfit: state.outfit })
+
+export default connect(mapStateToProps)(App);
