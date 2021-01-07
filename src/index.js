@@ -7,11 +7,15 @@ import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 import'bootstrap/dist/js/bootstrap.bundle.min';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+const store = createStore();
 
 const app = (
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
 )
 
 ReactDOM.render(
