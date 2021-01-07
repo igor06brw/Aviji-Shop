@@ -9,13 +9,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import allReducer from './reducers/index';
 
-const store = createStore();
+const exampleStore = createStore(
+  allReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const app = (
+  <Provider store={exampleStore}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+    </Provider>
 )
 
 ReactDOM.render(

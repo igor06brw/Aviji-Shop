@@ -11,7 +11,6 @@ import Shopping from "./components/Shopping/Shopping";
 
 
 class App extends Component {
-
   render() {
     console.log(this.props)
     return (
