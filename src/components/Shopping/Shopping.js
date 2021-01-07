@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import ShoppingItem from './ShoppingItem/ShoppingItem';
 import ShoppingOrder from './ShoppingOrder/ShoppingOrder';
+import OutfitAPI from '../data/API';
 
 class Shopping extends Component {
+    
+
+
     render() {
         return (
             <div className="container">
                 <table class="table table-dark">
                     <thead>
                         <tr>
-                            <th scope="col col-lg-2">Product</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Qty.</th>
-                            <th scope="col">Remove</th>
+                            <th id="product" scope="col col-lg-2">Product</th>
+                            <th id="price" scope="col">Price</th>
+                            <th id="quantity" scope="col">Qty.</th>
+                            <th id="actions" scope="col">Remove</th>
                         </tr>
                     </thead>
                     <tbody>
