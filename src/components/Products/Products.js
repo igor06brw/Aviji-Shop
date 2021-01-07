@@ -3,6 +3,7 @@ import Product from './Product/Product';
 import OutfitAPI from '../data/API';
 import ReactPaginate from 'react-paginate';
 import '../../styles/Products.css';
+import { connect } from 'react-redux';
 
 
 class Products extends Component {
@@ -27,11 +28,9 @@ class Products extends Component {
             pageCount: Math.ceil(products.length / this.state.perPage),
             productsPerPage
         })
-        console.log(products);
     }
 
     handlePageClick = (data) => {
-        console.log(data);
         const selectedPage = data.selected;
         const offset = Math.ceil(selectedPage  * this.state.perPage);
 
@@ -41,6 +40,7 @@ class Products extends Component {
     }
     
     render() {
+        console.log(this.props)
         return (
             <main className="container border-top mt-5 pl-0">
                 <nav className="nav my-3">
@@ -75,4 +75,5 @@ class Products extends Component {
     }
 }
 
-export default Products;
+const mapStateToProps = state => ({ outfit: state.outfit })
+export default connect(mapStateToProps)(Products);
