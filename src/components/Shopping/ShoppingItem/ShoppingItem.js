@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ShoppingItem = (props) => {
+    console.log(props);
     return (
         <tr>
             <td headers="product" scope="row">

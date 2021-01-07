@@ -5,10 +5,9 @@ import { connect } from 'react-redux';
 
 class Shopping extends Component {
     
-
+    shoppingList = this.props.shopping;
 
     render() {
-        console.log(this.props.shopping);
         return (
             <div className="container">
                 <table class="table table-dark">
@@ -21,7 +20,9 @@ class Shopping extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <ShoppingItem />
+                        {this.shoppingList.map(shoppingItem => (
+                            <ShoppingItem shoppingCart={shoppingItem}/>
+                        ))}
                     </tbody>
                 </table>
                <ShoppingOrder />
