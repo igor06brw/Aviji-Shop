@@ -12,10 +12,9 @@ import Shopping from "./components/Shopping/Shopping";
 
 class App extends Component {
   
-  
+  outfits = this.props.outfit.outfits;
   
   render() {
-    console.log(this.props)
     return (
       <Router>
         <div className="App">
@@ -25,6 +24,7 @@ class App extends Component {
                 <Route path="/product-detail" component={ProductDetail} />
                 <Route path="/auth" component={Auth} />
                 <Route path="/shopping" component={Shopping} />
+                <Route path="/product/:id" render={(el) => <ProductDetail {...this.outfits[el.match.params.id]} />}/>
               </Switch>
               <Footer />
         </div>

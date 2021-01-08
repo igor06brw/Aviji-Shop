@@ -1,9 +1,10 @@
 import React from 'react';
 
-const ProductDetail = () => {
+const ProductDetail = (props) => {
+    console.log(props);
     return (
         <div>
-            <h1>Product Detail</h1>
+            <h1>Product Detail {props.type}</h1>
         </div>
     );
 }

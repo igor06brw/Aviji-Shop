@@ -40,7 +40,7 @@ const Product = (props) => {
                     <img src={props.product.image} className="card-img-top w-100" alt="..."/>
                     <h5 className="position-absolute font-weight-bold text-dark m-1">${props.product.price}</h5>
                     <Link to={`/product/${props.product.id}`} className="position-absolute product-details btn btn-secondary m-1">Details</Link>
-                    <Link className="position-absolute product-cart btn btn-danger m-1">Add to cart</Link>
+                    <button className="position-absolute product-cart btn btn-danger m-1">Add to cart</button>
                     {onHoverInfo}
                     </div> 
                 : 
