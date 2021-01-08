@@ -1,0 +1,25 @@
+.detail-container {
+    width: 50%;
+}
+
+.detail-container:first-of-type > img {
+    width: 100%;
+}
+.detail-heading {
+    letter-spacing: 0.3em;
+}
+.detail-description {
+    letter-spacing: 0.15em;
+    word-spacing: 0.45em;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.detail-price {
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.detail-price > span {
+    font-style: italic;
+}
