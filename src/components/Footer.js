@@ -29,7 +29,7 @@ const Footer = () => {
                         <p>Contact details</p>
                         <li><a href="#" className="text-decoration-none">Head Office: Aviji Shop, 123-456 Bishop Street, Los Stantos</a></li>
                         <li><a href="tel:0123-456-789" className="text-decoration-none">Telephone: 0123-456-789</a></li>
-                        <li><a href="mailto:support@avijishop.com" className="text-decoration-none">Email: support@avijishop.com</a></li>
+                        <li><a href="mailto:support@avijishop.com" className="text-decoration-none text-wrap">Email: support@avijishop.com</a></li>
                     </ul>
                 </nav>
             </div>

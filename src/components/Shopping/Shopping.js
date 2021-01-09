@@ -10,7 +10,7 @@ class Shopping extends Component {
     render() {
         return (
             <div className="container">
-                <table class="table table-dark">
+                <table class="table table-secondary table-hover table-borderless">
                     <thead>
                         <tr>
                             <th id="product" scope="col col-lg-2">Product</th>

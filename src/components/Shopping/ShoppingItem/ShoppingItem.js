@@ -5,9 +5,9 @@ import '../../../styles/ShoppingItem.css'
 const ShoppingItem = (props) => {
     console.log(props);
     return (
-        <tr>
+        <tr className="table-light text-dark">
             <td headers="product" scope="row">
-                <Link className="d-flex align-self-center shopping-item-link" to={`/product/${props.shoppingCart.id}`}>
+                <Link className="d-flex align-self-center shopping-item-link text-decoration-none" to={`/product/${props.shoppingCart.id}`}>
                     <img className="shopping-item-image align-self-center" src={props.shoppingCart.image}/>
                     <h6 className="text-info pl-4">{props.shoppingCart.name}</h6>
                 </Link>
