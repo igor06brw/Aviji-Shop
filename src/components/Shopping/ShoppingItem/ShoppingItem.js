@@ -7,7 +7,7 @@ const ShoppingItem = (props) => {
     return (
         <tr>
             <td headers="product" scope="row">
-                <Link className="d-flex align-self-center shopping-item-link" to={`/product/${1}`}>
+                <Link className="d-flex align-self-center shopping-item-link" to={`/product/${props.shoppingCart.id}`}>
                     <img className="shopping-item-image align-self-center" src={props.shoppingCart.image}/>
                     <h6 className="text-info pl-4">{props.shoppingCart.name}</h6>
                 </Link>
