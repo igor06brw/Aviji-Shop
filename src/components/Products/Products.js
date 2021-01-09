@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Product from './Product/Product';
-import OutfitAPI from '../data/API';
 import ReactPaginate from 'react-paginate';
 import '../../styles/Products.css';
 import { connect } from 'react-redux';
@@ -16,7 +15,7 @@ class Products extends Component {
     }
 
     componentDidMount() {
-        this.getAllProducts(OutfitAPI.allOutfits());
+        this.getAllProducts(this.props.outfit.allOutfits());
     }
 
     getAllProducts(props) {
@@ -35,12 +34,11 @@ class Products extends Component {
         const offset = Math.ceil(selectedPage  * this.state.perPage);
 
         this.setState({ offset: offset }, () => {
-            this.getAllProducts(OutfitAPI.allOutfits());
+            this.getAllProducts(this.props.outfit.allOutfits());
         })
     }
     
     render() {
-        console.log(this.props)
         return (
             <main className="container border-top mt-5 pl-0">
                 <nav className="nav my-3">
