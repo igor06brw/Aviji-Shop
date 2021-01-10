@@ -8,11 +8,11 @@ const initialState = [
 
 const shoppingReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD': 
-            return state.push({
-                ...state, 
-                state: action.payload
-            });
+        case 'ADD_TO_SHOPPING_LIST': 
+            {   
+                console.log(action.payload);
+                state.push(action.payload);
+            }
         default:
             return state;
     }

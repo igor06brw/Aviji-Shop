@@ -8,6 +8,7 @@ class Shopping extends Component {
     shoppingList = this.props.shopping;
 
     render() {
+        console.log(this.props)
         return (
             <div className="container">
                 <table class="table table-secondary table-hover table-borderless">

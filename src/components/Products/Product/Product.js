@@ -3,10 +3,17 @@ import '../../../styles/Product.css'
 import '../../../styles/Customize/Custom__Animate.css'
 import { Link } from 'react-router-dom';
 import Spinner from '../../Spinner/Spinner'
+import { useSelector, useDispatch } from 'react-redux'
+import { addToShoppingList } from '../../actions/index';
+
+
+
 
 const Product = (props) => {
     const [hover, setHover] = useState(false);
     const [isLoading, setLoading] = useState(true);
+    const dispatch = useDispatch();
+    const shopping = useSelector(state => state.shopping)
     
     useEffect(() => {
         setTimeout(() => {
@@ -15,7 +22,6 @@ const Product = (props) => {
     }, []);
 
     let onHoverInfo;
-
     if(hover === true) {
         onHoverInfo = (
             <div className="text-of-absolute animate__animated animate__fadeInDown">
@@ -39,7 +45,7 @@ const Product = (props) => {
                     <img src={props.product.image} className="card-img-top w-100" alt="..."/>
                     <h5 className="position-absolute font-weight-bold text-dark m-1">${props.product.price}</h5>
                     <Link to={`/product/${props.product.id}`} className="position-absolute product-details btn btn-secondary m-1">Details</Link>
-                    <button  className="position-absolute product-cart btn btn-danger m-1">Add to cart</button>
+                    <button onClick={() => dispatch(addToShoppingList(props.product)) } className="position-absolute product-cart btn btn-danger m-1">Add to cart</button>
                     {onHoverInfo}
                     </div> 
                 : 
