@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../../../styles/ShoppingItem.css'
 
 const ShoppingItem = (props) => {
-    console.log(props);
     return (
         <tr className="table-light text-dark">
             <td headers="product" scope="row">
