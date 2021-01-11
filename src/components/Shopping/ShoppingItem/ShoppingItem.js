@@ -12,7 +12,7 @@ const ShoppingItem = (props) => {
                     <h6 className="text-info pl-4">{props.shoppingCart.name}</h6>
                 </Link>
             </td>
-            <td headers="price">{props.shoppingCart.price}</td>
+            <td headers="price">${props.shoppingCart.price}</td>
             <td headers="quantity">{props.shoppingQuantity.qty}</td>
             <td headers="actions">Delete</td>
         </tr>

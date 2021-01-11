@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import ShoppingItem from './ShoppingItem/ShoppingItem';
 import ShoppingOrder from './ShoppingOrder/ShoppingOrder';
 import { connect } from 'react-redux';
 
 class Shopping extends Component {
     
-    shoppingList = this.props.shopping;
 
-    countedShoppingList = [];
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            shopping: props.shopping,
+            countedShoppingList: []
+        }
+    }
 
     onSortOfShoppingItem = (shoppingList) => {
         let _tempShoppingList = [];
@@ -19,14 +25,14 @@ class Shopping extends Component {
                 let _tempArray = []
                 _tempShoppingList.push(item)
                 _tempArray.push(item, { qty: 1})
-                this.countedShoppingList.push(_tempArray);
+                this.state.countedShoppingList.push(_tempArray);
             }
         })
     }
 
     onCountFromDuplicate = (item) => {
         const idFromItem = Object.keys(item).includes("id") ? item.id : null;
-        this.countedShoppingList.forEach((el) => { 
+        this.state.countedShoppingList.forEach((el) => { 
             if(idFromItem === el[0].id) {
                 el[1].qty += 1
             }
@@ -34,7 +40,7 @@ class Shopping extends Component {
     }
 
     render() {
-        this.onSortOfShoppingItem(this.shoppingList);
+        this.onSortOfShoppingItem(this.state.shopping);
         return (
             <div className="container">
                 <table class="table table-secondary table-hover table-borderless">
@@ -47,7 +53,8 @@ class Shopping extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        { this.countedShoppingList.map(shoppingItem => (
+                        { this.state.countedShoppingList.map(shoppingItem => (
+                            console.log(this.countedShoppingList),
                             <ShoppingItem shoppingCart={shoppingItem[0]} shoppingQuantity={shoppingItem[1]} />
                         ))}
                     </tbody>
