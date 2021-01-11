@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../../../styles/ShoppingItem.css'
 
 const ShoppingItem = (props) => {
+    console.log(props)
     return (
         <tr className="table-light text-dark">
             <td headers="product" scope="row">
@@ -12,7 +13,7 @@ const ShoppingItem = (props) => {
                 </Link>
             </td>
             <td headers="price">{props.shoppingCart.price}</td>
-            <td headers="quantity">{props.shoppingCart.quantity}</td>
+            <td headers="quantity">{props.shoppingQuantity.qty}</td>
             <td headers="actions">Delete</td>
         </tr>
     );

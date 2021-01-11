@@ -48,7 +48,7 @@ class Shopping extends Component {
                     </thead>
                     <tbody>
                         { this.countedShoppingList.map(shoppingItem => (
-                            <ShoppingItem shoppingCart={shoppingItem[0]} qty={shoppingItem[1]}/>
+                            <ShoppingItem shoppingCart={shoppingItem[0]} shoppingQuantity={shoppingItem[1]} />
                         ))}
                     </tbody>
                 </table>
