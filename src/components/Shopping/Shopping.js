@@ -50,6 +50,9 @@ class Shopping extends Component {
         })
         this.setState({ summaryOfOrder: calculate })
     }
+    // componentDidUpdate() {
+    //     this.onShoppingList(this.state.shopping);
+    // }
 
     componentDidMount() {
         this.onShoppingList(this.state.shopping);
@@ -70,7 +73,7 @@ class Shopping extends Component {
                     <tbody>
                         { this.state.countedShoppingList.map(shoppingItem => (
                             console.log(this.countedShoppingList),
-                            <ShoppingItem shoppingCart={shoppingItem[0]} shoppingQuantity={shoppingItem[1]} />
+                            <ShoppingItem shoppingCart={shoppingItem[0]} shoppingQuantity={shoppingItem[1]} onDelete={this.onDeleteFromList}/>
                         ))}
                     </tbody>
                 </table>
