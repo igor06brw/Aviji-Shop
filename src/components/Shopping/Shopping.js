@@ -11,11 +11,12 @@ class Shopping extends Component {
         
         this.state = {
             shopping: props.shopping,
-            countedShoppingList: []
+            countedShoppingList: [],
+            summaryOfOrder: 0
         }
     }
 
-    onSortOfShoppingItem = (shoppingList) => {
+    onShoppingList = (shoppingList) => {
         let _tempShoppingList = [];
         let _tempSortedShoppingList = [];
         shoppingList.forEach((item) => {
@@ -29,6 +30,7 @@ class Shopping extends Component {
                 _tempSortedShoppingList.push(_tempArray);
             }
         })
+        this.onCalculateOrder(_tempSortedShoppingList)
         this.setState({ countedShoppingList: _tempSortedShoppingList})
     }
 
@@ -41,8 +43,16 @@ class Shopping extends Component {
         })
     }
 
+    onCalculateOrder = (list) => {
+        let calculate = 0;
+        list.forEach((el, index) => {
+            calculate += Number((el[0].price * el[1].qty).toFixed(2));
+        })
+        this.setState({ summaryOfOrder: calculate })
+    }
+
     componentDidMount() {
-        this.onSortOfShoppingItem(this.state.shopping);
+        this.onShoppingList(this.state.shopping);
     }
 
     render() {
@@ -64,7 +74,7 @@ class Shopping extends Component {
                         ))}
                     </tbody>
                 </table>
-               <ShoppingOrder />
+               <ShoppingOrder summary={this.state.summaryOfOrder}/>
             </div>
         );
     }

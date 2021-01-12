@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ShoppingOrder = () => {
+const ShoppingOrder = (props) => {
     return (
         <div>
-            ShoppingOrder
+           ${props.summary}
         </div>
     );
 }
