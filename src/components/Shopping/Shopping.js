@@ -17,30 +17,35 @@ class Shopping extends Component {
 
     onSortOfShoppingItem = (shoppingList) => {
         let _tempShoppingList = [];
+        let _tempSortedShoppingList = [];
         shoppingList.forEach((item) => {
             if(_tempShoppingList.includes(item)) {
-                this.onCountFromDuplicate(item);
+                this.onCountFromDuplicate(_tempSortedShoppingList, item);
             }
             if(!_tempShoppingList.includes(item)) {
                 let _tempArray = []
                 _tempShoppingList.push(item)
                 _tempArray.push(item, { qty: 1})
-                this.state.countedShoppingList.push(_tempArray);
+                _tempSortedShoppingList.push(_tempArray);
             }
         })
+        this.setState({ countedShoppingList: _tempSortedShoppingList})
     }
 
-    onCountFromDuplicate = (item) => {
+    onCountFromDuplicate = (array, item) => {
         const idFromItem = Object.keys(item).includes("id") ? item.id : null;
-        this.state.countedShoppingList.forEach((el) => { 
+        array.forEach((el) => { 
             if(idFromItem === el[0].id) {
                 el[1].qty += 1
             }
         })
     }
 
-    render() {
+    componentDidMount() {
         this.onSortOfShoppingItem(this.state.shopping);
+    }
+
+    render() {
         return (
             <div className="container">
                 <table class="table table-secondary table-hover table-borderless">
