@@ -2,7 +2,6 @@ import { data } from 'jquery';
 import React from 'react';
 
 const Dropdown = ({id, dataToggle, title, data }) => {
-    console.log(id, dataToggle, title)
     return (
         <li className="nav-item">
             <a 

@@ -6,9 +6,7 @@ import { removeFromShoppingList } from '../../actions/index';
 
 const ShoppingItem = (props) => {
     const dispatch = useDispatch();
-    const shopping = useSelector(state => state.shopping)
 
-    console.log(props)
     return (
         <tr className="table-light text-dark">
             <td headers="product" scope="row">
