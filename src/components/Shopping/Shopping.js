@@ -50,13 +50,19 @@ class Shopping extends Component {
         })
         this.setState({ summaryOfOrder: calculate })
     }
-    // componentDidUpdate() {
-    //     this.onShoppingList(this.state.shopping);
-    // }
 
-    componentDidMount() {
-        this.onShoppingList(this.state.shopping);
+     componentDidMount() {
+         this.onShoppingList(this.state.shopping);
+     }
+    
+    componentDidUpdate(prevProps) {
+        if(prevProps.shopping !== this.props.shopping) {
+            this.setState({ shopping: this.props.shopping }, () => { this.onShoppingList(this.state.shopping) })
+        }
     }
+    
+
+
 
     render() {
         return (
@@ -72,7 +78,6 @@ class Shopping extends Component {
                     </thead>
                     <tbody>
                         { this.state.countedShoppingList.map(shoppingItem => (
-                            console.log(this.countedShoppingList),
                             <ShoppingItem shoppingCart={shoppingItem[0]} shoppingQuantity={shoppingItem[1]} onDelete={this.onDeleteFromList}/>
                         ))}
                     </tbody>
