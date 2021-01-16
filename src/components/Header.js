@@ -37,11 +37,13 @@ class Header extends Component {
 
     render() {
         return (
-            <header >
+            <header>
                 <Navbar />
                 <div className="image-of-background">
-                    <h1 className="font-weight-bold text-light header-title">Aviji Shop</h1>
-                    <p className="font-weight-light text-light header-description">{this.state.description}</p>
+                    <div className="container">
+                        <h1 className="font-weight-bold text-light header-title">Aviji Shop</h1>
+                        <p className="font-weight-light text-light header-description">{this.state.description}</p>
+                    </div>
                 </div>
             </header>
         );
