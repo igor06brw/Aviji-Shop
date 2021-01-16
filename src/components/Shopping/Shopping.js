@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import ShoppingItem from './ShoppingItem/ShoppingItem';
 import ShoppingOrder from './ShoppingOrder/ShoppingOrder';
 import { connect } from 'react-redux';

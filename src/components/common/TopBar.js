@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react';
 
 const Topbar = (props) => {
 
@@ -15,10 +14,10 @@ const Topbar = (props) => {
 
     return (
         <nav className="navbar bg-dark">
-            <a className="nav-link text-light mr-auto" href="#"> 
+            <Link className="nav-link text-light mr-auto"> 
                 <span className="mr-2">Currency: GBP</span>
                 <i className="fas fa-sort-down"></i>
-            </a>
+            </Link>
             <Link to="/auth" className="nav-link text-light">Sign in or Register</Link>
             <Link to="/shopping" className="nav-link text-light bg-success" aria-disabled="true">
                 <i className="fas fa-shopping-cart"></i>

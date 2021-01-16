@@ -3,7 +3,7 @@ import '../../../styles/Product.css'
 import '../../../styles/Customize/Custom__Animate.css'
 import { Link } from 'react-router-dom';
 import Spinner from '../../Spinner/Spinner'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addToShoppingList } from '../../actions/index';
 
 
@@ -13,7 +13,6 @@ const Product = (props) => {
     const [hover, setHover] = useState(false);
     const [isLoading, setLoading] = useState(true);
     const dispatch = useDispatch();
-    const shopping = useSelector(state => state.shopping)
     
     useEffect(() => {
         setTimeout(() => {

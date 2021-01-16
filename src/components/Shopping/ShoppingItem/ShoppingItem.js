@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../../styles/ShoppingItem.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { removeFromShoppingList } from '../../actions/index';
 
 const ShoppingItem = (props) => {

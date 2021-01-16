@@ -15,7 +15,7 @@ const Nav = () => {
                 <Dropdown id="dropdownMenuLink" dataToggle="dropdown" title="Mens" data={navMens}/>
                 <Dropdown id="dropdownMenuLink" dataToggle="dropdown" title="Womens" data={navWomens}/>
                 <li className="nav-item">
-                    <a className="nav-link text-success" href="#">Own shopping</a>
+                    <Link className="nav-link text-success" to="/shopping">Own shopping</Link>
                 </li>
             </ul>
             <SearchInput />
