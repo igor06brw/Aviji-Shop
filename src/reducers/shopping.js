@@ -5,8 +5,7 @@ const shoppingReducer = (state = [], action) => {
                 return [...state, action.payload];
         case 'REMOVE_FROM_SHOPPING_LIST': 
                 {
-                        const index = state.findIndex((i) => i.id === action.payload.id);
-                        state.splice(index, 1);
+                        state.splice(state.findIndex( obj => obj.id === action.payload.id ), 1)
                         return [...state];
                 }
         default:
