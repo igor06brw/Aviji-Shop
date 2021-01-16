@@ -4,7 +4,11 @@ const shoppingReducer = (state = [], action) => {
         case 'ADD_TO_SHOPPING_LIST': 
                 return [...state, action.payload];
         case 'REMOVE_FROM_SHOPPING_LIST': 
-                return  state.filter(e => { return e.id !== action.payload.id} )
+                {
+                        const index = state.findIndex((i) => i.id === action.payload.id);
+                        state.splice(index, 1);
+                        return [...state];
+                }
         default:
             return state;
     }
