@@ -60,13 +60,16 @@ class Shopping extends Component {
             this.setState({ shopping: this.props.shopping }, () => { this.onShoppingList(this.state.shopping) })
         }
     }
+
+
     
 
 
 
     render() {
-        return (
-            <div className="container">
+
+        let shoppingList = (
+            <div>
                 <table class="table table-secondary table-hover table-borderless">
                     <thead>
                         <tr>
@@ -77,12 +80,27 @@ class Shopping extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        { this.state.countedShoppingList.map(shoppingItem => (
+                    {                          
+                        this.state.countedShoppingList.map(shoppingItem => (
                             <ShoppingItem shoppingCart={shoppingItem[0]} shoppingQuantity={shoppingItem[1]} onDelete={this.onDeleteFromList}/>
-                        ))}
+                        ))
+                    }
                     </tbody>
                 </table>
-               <ShoppingOrder summary={this.state.summaryOfOrder}/>
+                <ShoppingOrder summary={this.state.summaryOfOrder}/>
+            </div>
+        )
+
+        return (
+            <div className="container">
+                {
+                    this.state.countedShoppingList.length === 0 ? (
+                        <h3 className="text-danger text-center py-4 animate__animated animate__fadeIn">Shopping Cart is empty!</h3>
+                        ) : 
+                        (                                
+                            shoppingList
+                        ) 
+                }
             </div>
         );
     }
