@@ -16,7 +16,7 @@ class Shopping extends Component {
         }
     }
 
-    onShoppingList = (shoppingList) => {
+    onShoppingList = (shoppingList, onCalculateOrder) => {
         let _tempShoppingList = [];
         let _tempSortedShoppingList = [];
         shoppingList.forEach((item) => {
@@ -30,7 +30,7 @@ class Shopping extends Component {
                 _tempSortedShoppingList.push(_tempArray);
             }
         })
-        this.onCalculateOrder(_tempSortedShoppingList)
+        onCalculateOrder(_tempSortedShoppingList)
         this.setState({ countedShoppingList: _tempSortedShoppingList})
     }
 
@@ -52,12 +52,12 @@ class Shopping extends Component {
     }
 
      componentDidMount() {
-         this.onShoppingList(this.state.shopping);
+         this.onShoppingList(this.state.shopping, this.onCalculateOrder);
      }
     
     componentDidUpdate(prevProps) {
         if(prevProps.shopping !== this.props.shopping) {
-            this.setState({ shopping: this.props.shopping }, () => { this.onShoppingList(this.state.shopping) })
+            this.setState({ shopping: this.props.shopping }, () => { this.onShoppingList(this.state.shopping, this.onCalculateOrder) })
         }
     }
 
