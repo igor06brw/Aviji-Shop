@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
-import "../styles/Header.css"
+import Navbar from '../Navbar';
+import "../../styles/Header.css"
 import { withRouter } from 'react-router-dom';
-import descriptions from './data/description';
+import descriptions from '../../store/data/description';
 
 class Header extends Component { 
     state = {

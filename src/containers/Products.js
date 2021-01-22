@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Product from './Product/Product';
+import Product from '../components/Products/Product/Product';
 import ReactPaginate from 'react-paginate';
 import { Link } from 'react-router-dom'
-import '../../styles/Products.css';
+import '../styles/Products.css';
 import { connect } from 'react-redux';
 
 

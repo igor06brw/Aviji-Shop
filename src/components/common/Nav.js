@@ -1,7 +1,7 @@
 import React from 'react';
 import Dropdown from './Dropdown';
 import Logo from './Logo';
-import { navMens, navWomens } from '../data/nav';
+import { navMens, navWomens } from '../../store/data/nav';
 import SearchInput from './SearchInput';
 import { Link } from 'react-router-dom';
 
