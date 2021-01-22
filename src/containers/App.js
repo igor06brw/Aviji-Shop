@@ -10,9 +10,7 @@ import Shopping from "./Shopping";
 
 
 class App extends Component {
-  
-  outfits = this.props.outfit.outfits;
-  
+   
   render() {
     return (
       <Router>
@@ -23,7 +21,7 @@ class App extends Component {
               <Route path="/product-detail" component={ProductDetail} />
               <Route path="/auth" component={Auth} />
               <Route path="/shopping" component={Shopping} />
-              <Route path="/product/:id" render={(el) => <ProductDetail {...this.outfits[el.match.params.id]} />}/>
+              <Route path="/product/:id" render={(el) => <ProductDetail {...this.props.outfit.outfits[el.match.params.id]} />}/>
             </Switch>
           <Footer />
         </div>
