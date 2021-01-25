@@ -6,6 +6,7 @@ const Login = ({ login, history }) => {
     const email = createRef();
     const password = createRef();
 
+
     const handleSubmit = event => {
         event.preventDefault()
         login(email.current.value, password.current.value)
@@ -19,7 +20,7 @@ const Login = ({ login, history }) => {
 
     return (
         <div className="p-5 col">
-            <form>
+            <form onSubmit={handleSubmit} >
                 <h2 className="display-4 pb-4">Login</h2>
                 <div className="mb-3">
                     <label for="loginEmail" className="form-label">Your Email...</label>
@@ -48,4 +49,4 @@ const Login = ({ login, history }) => {
     );
 }
 
-export default Login;
+export default connect(null, { login })(Login);
