@@ -5,8 +5,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 import'bootstrap/dist/js/bootstrap.bundle.min';
 import App from './containers/App';
-import configureStore from "./store/configure-store";
-import OutfitAPI from './store/data/API'
+import configureStore from "./redux/configure-store";
+import OutfitAPI from './API'
 import { Provider } from 'react-redux';
 
 

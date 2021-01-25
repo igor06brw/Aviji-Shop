@@ -1,4 +1,4 @@
-import OutfitAPI from '../data/API'
+import OutfitAPI from '../../API'
 
 const outfitReducer = (state = OutfitAPI, action) => {
     switch (action.type) {

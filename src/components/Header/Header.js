@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from '../Navbar';
 import "../../styles/Header.css"
 import { withRouter } from 'react-router-dom';
-import descriptions from '../../store/data/description';
+import descriptions from '../../redux/store/description';
 
 class Header extends Component { 
     state = {

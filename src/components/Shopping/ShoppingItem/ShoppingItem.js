@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../../styles/ShoppingItem.css';
 import { useDispatch } from 'react-redux';
-import { removeFromShoppingList } from '../../../store/actions';
+import { removeFromShoppingList } from '../../../redux/actions';
 
 const ShoppingItem = (props) => {
     const dispatch = useDispatch();
