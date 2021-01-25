@@ -7,6 +7,7 @@ import Auth from "./Auth";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Shopping from "./Shopping";
+import PrivateRoute from "./PrivateRoute";
 
 
 class App extends Component {
@@ -20,7 +21,7 @@ class App extends Component {
               <Route exact path="/" component={Products} />
               <Route path="/product-detail" component={ProductDetail} />
               <Route path="/auth" component={Auth} />
-              <Route path="/shopping" component={Shopping} />
+              <PrivateRoute path="/shopping" component={Shopping} currentUser={this.props.currentUser} />
               <Route path="/product/:id" render={(el) => <ProductDetail {...this.props.outfit.outfits[el.match.params.id]} />}/>
             </Switch>
           <Footer />
@@ -30,6 +31,6 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({ outfit: state.outfit })
+const mapStateToProps = state => ({ outfit: state.outfit, currentUser: state.currentUser })
 
 export default connect(mapStateToProps)(App);
