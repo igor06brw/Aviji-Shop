@@ -14,8 +14,8 @@ class Auth extends Component {
         console.log(this.props)
         return (
             <div className="d-flex justify-content-center container">   
-                <Login />
-                <Register />
+                <Login history={this.props.history}/>
+                <Register history={this.props.history}/>
             </div>
         );
     }
