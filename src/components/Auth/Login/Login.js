@@ -1,17 +1,46 @@
-import React from 'react';
+import React, { createRef } from 'react';
+import { connect } from "react-redux";
+import { login } from "../../../redux/actions/firebase"
 
-const Login = (props) => {
+const Login = ({ login, history }) => {
+    const email = createRef();
+    const password = createRef();
+
+    const handleSubmit = event => {
+        event.preventDefault()
+        login(email.current.value, password.current.value)
+            .then(() => {
+                history.push("/")
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
     return (
         <div className="p-5 col">
             <form>
                 <h2 className="display-4 pb-4">Login</h2>
                 <div className="mb-3">
                     <label for="loginEmail" className="form-label">Your Email...</label>
-                    <input type="email" className="form-control" id="loginEmail" required/>
+                    <input 
+                        name="email"
+                        type="email" 
+                        className="form-control" 
+                        id="loginEmail" 
+                        ref={email}
+                        required/>
                 </div>
                 <div className="mb-3">
                     <label for="loginPassword" className="form-label">Your Password...</label>
-                    <input type="password" className="form-control" id="loginPassword" />
+                    <input 
+                        name="password"
+                        type="password" 
+                        className="form-control" 
+                        id="loginPassword" 
+                        autoComplete="none"
+                        ref={password}
+                    />
                 </div>
                 <button type="submit" className="btn btn-lg btn-success">Sign in</button>
             </form>
