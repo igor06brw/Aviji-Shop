@@ -1,6 +1,7 @@
 import React, { createRef } from 'react';
 import { connect } from "react-redux";
 import { register } from "../../../redux/actions/firebase"
+import cogoToast from 'cogo-toast';
 
 const Register = ({ register, history }) => {
     const email = createRef();
@@ -10,17 +11,17 @@ const Register = ({ register, history }) => {
     const handleSubmit = event => {
         
         event.preventDefault();
-        console.log(password.current.value, confirmPassword.current.value)
         if(password.current.value === confirmPassword.current.value) {
             register(email.current.value, password.current.value)
             .then(() => {
+                cogoToast.success('User is logout sucessfully!');
                 history.push("/")
             })
             .catch(error => {
-                console.error(error.message)
+                cogoToast.error(error.message);
             })
         } else {
-            console.error('Not equal password!')
+            cogoToast.warn('Password is not equal!');
         }
     }
 

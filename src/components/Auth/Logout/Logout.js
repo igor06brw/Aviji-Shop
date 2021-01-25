@@ -1,6 +1,7 @@
 import React, { createRef } from 'react';
 import { connect } from "react-redux";
 import { logout } from "../../../redux/actions/firebase"
+import cogoToast from 'cogo-toast';
 
 const Logout = ({ logout, history }) => {
 
@@ -9,11 +10,11 @@ const Logout = ({ logout, history }) => {
         event.preventDefault();
         logout()
         .then(() => {
-            console.log('logout!')
+            cogoToast.success('User is logout sucessfully!');
             history.push("/")
         })
         .catch(error => {
-            console.error(error.message)
+            cogoToast.error(error.message);
         })
     }
 

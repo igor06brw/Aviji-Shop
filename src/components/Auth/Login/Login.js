@@ -1,6 +1,7 @@
 import React, { createRef } from 'react';
 import { connect } from "react-redux";
 import { login } from "../../../redux/actions/firebase"
+import cogoToast from 'cogo-toast';
 
 const Login = ({ login, history }) => {
     const email = createRef();
@@ -11,10 +12,11 @@ const Login = ({ login, history }) => {
         event.preventDefault()
         login(email.current.value, password.current.value)
             .then(() => {
+                cogoToast.success('Login sucessfully!');
                 history.push("/")
             })
             .catch(error => {
-                console.error(error)
+                cogoToast.error(error.message);
             })
     }
 
