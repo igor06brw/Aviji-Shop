@@ -30,3 +30,12 @@ export const login = (email, password) => async dispatch => {
     throw error
   }
 }
+
+export const logout = () => async dispatch => {
+  try {
+    await auth.signOut()
+    dispatch({ type: "LOGOUT", currentUser: auth.currentUser })
+  } catch (error) {
+    throw error
+  }
+}

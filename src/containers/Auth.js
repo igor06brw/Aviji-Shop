@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Register from '../components/Auth/Register/Register';
 import Login from '../components/Auth/Login/Login';
+import Logout from '../components/Auth/Logout/Logout';
 import { connect } from 'react-redux';
 
 class Auth extends Component {
@@ -9,11 +10,12 @@ class Auth extends Component {
         this.state = {
             description: 'Sign in or Register',
         }
+        console.log(this.props.currentUser);
     }
 
     onAuthorizedUser() {
-        console.log(this.props.uid);
-        return this.props.uid !== undefined ? <><Login history={this.props.history}/><Register history={this.props.history}/></> : <p>LOGOUT</p>;
+        console.log(this);
+        return this.props.currentUser === null ? <><Login history={this.props.history}/><Register history={this.props.history}/></> : <p><Logout history={this.props.history}/></p>;
         
     }
 
@@ -28,6 +30,6 @@ class Auth extends Component {
     }
 }
 
-const mapStateToProps = state => (state.currentUser)
+const mapStateToProps = state => ({ currentUser: state.currentUser })
 
 export default connect(mapStateToProps)(Auth);
