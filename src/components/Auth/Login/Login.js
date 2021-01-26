@@ -1,6 +1,6 @@
 import React, { createRef } from 'react';
 import { connect } from "react-redux";
-import { login } from "../../../redux/actions/firebase"
+import { login } from "../../../redux/actions/auth"
 import cogoToast from 'cogo-toast';
 
 const Login = ({ login, history }) => {

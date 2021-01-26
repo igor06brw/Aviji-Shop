@@ -1,4 +1,4 @@
-import { auth } from "../../firebase/auth/authService";
+import { auth } from "../../firebase/auth/db";
 
 export const loginSuccess = () => {
   return {

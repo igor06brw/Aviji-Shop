@@ -4,7 +4,7 @@ import '../../../styles/Customize/Custom__Animate.css'
 import { Link } from 'react-router-dom';
 import Spinner from '../../Spinner/Spinner'
 import { useDispatch } from 'react-redux'
-import { addToShoppingList } from '../../../redux/actions';
+import { addToShoppingList } from '../../../redux/actions/shopping';
 
 
 

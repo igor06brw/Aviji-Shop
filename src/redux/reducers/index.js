@@ -1,6 +1,6 @@
 import outfitReducer from './outfit';
 import shoppingReducer from './shopping';
-import currentUser from "./firebase"
+import currentUser from "./auth"
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
