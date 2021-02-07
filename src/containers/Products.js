@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import '../styles/Products.css';
 import { connect } from 'react-redux';
 import { db } from '../firebase/auth/db'
+import { fetchOutfits } from '../redux/actions/outfits';
 
 class Products extends Component {
     
@@ -17,20 +18,22 @@ class Products extends Component {
     }
 
     getAllProductsFromDB() {
-        const store = db.collection('outfits').onSnapshot(snapshot => {
-            const products = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-            this.setState({products1: products})
-            console.log(this.state.products1)
-            console.log(this.props.outfit.outfits)
-        })
+        fetchOutfits();
+        // const store = db.collection('outfits').onSnapshot(snapshot => {
+        //     const products = snapshot.docs.map(doc => ({
+        //         id: doc.id,
+        //         ...doc.data()
+        //     }));
+        //     this.setState({products1: products})
+        //     console.log(this.state.products1)
+        //     console.log(this.props.outfit.outfits)
+        // })
     }
 
     componentDidMount() {
-        this.getAllProducts(this.props.outfit.allOutfits());
-        this.getAllProductsFromDB()
+        console.log(this.props)
+        this.getAllProducts(this.props.outfit);
+        this.getAllProductsFromDB(this.props.outfit)
     }
 
     getAllProducts(props) {
@@ -42,10 +45,6 @@ class Products extends Component {
             pageCount: Math.ceil(products.length / this.state.perPage),
             productsPerPage
         })
-    }
-
-    getAllTshirt() {
-
     }
 
     handlePageClick = (data) => {

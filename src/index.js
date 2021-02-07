@@ -6,11 +6,10 @@ import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 import'bootstrap/dist/js/bootstrap.bundle.min';
 import App from './containers/App';
 import configureStore from "./redux/configure-store";
-import OutfitAPI from './API'
 import { Provider } from 'react-redux';
 
 
-const store = configureStore(OutfitAPI);
+const store = configureStore();
 
 const app = (
   <Provider store={store}>
