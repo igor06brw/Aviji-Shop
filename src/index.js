@@ -6,15 +6,28 @@ import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import App from './containers/App';
 import { Provider } from 'react-redux';
+import { ReactReduxFirebaseProvider, firebaseReducer } from 'react-redux-firebase'
 import configureStore from './store/store';
+import firebase from 'firebase/app';
+import { rrfConfig, runFirebase }from './firebase/config';
 
 const store = configureStore;
 
+export const rrfProps = {
+  firebase,
+  config: rrfConfig,
+  dispatch: store.dispatch
+  // createFirestoreInstance // <- needed if using firestore
+}
+runFirebase();
+
 const app = (
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ReactReduxFirebaseProvider {...rrfProps}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ReactReduxFirebaseProvider>
   </Provider>
 )
 
