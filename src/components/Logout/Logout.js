@@ -1,6 +1,5 @@
 import React, { createRef } from 'react';
 import { connect } from "react-redux";
-import { logout } from "../../../redux/actions/auth"
 import cogoToast from 'cogo-toast';
 
 const Logout = ({ logout, history }) => {
@@ -29,4 +28,4 @@ const Logout = ({ logout, history }) => {
     );
 }
 
-export default connect(null, { logout })(Logout)
+export default Logout;

@@ -16,7 +16,7 @@ const Dropdown = ({id, dataToggle, title, data }) => {
 
             <div className="dropdown-menu" aria-labelledby={id}>
                 <div className="d-flex my-2">
-                    <div className="mx-2">
+                    {/* <div className="mx-2">
                         <h6 className="font-weight-bold">Casual</h6>
                         <Link className="dropdown-item" href="#">{data[0]}</Link>
                         <Link className="dropdown-item" href="#">{data[1]}</Link>
@@ -27,7 +27,7 @@ const Dropdown = ({id, dataToggle, title, data }) => {
                         <Link className="dropdown-item" href="#">{data[3]}</Link>
                         <Link className="dropdown-item" href="#">{data[4]}</Link>
                         <Link className="dropdown-item" href="#">{data[5]}</Link>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="promotion bg-dark mx-3 text-center">
                     <h2 className="promotion-text p-2 text-light text-wrap"><span className="font-weight-bold">Winter sale! </span>Up to 50% off</h2>

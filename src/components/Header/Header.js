@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Navbar from '../Navbar';
 import "../../styles/Header.css"
 import { withRouter } from 'react-router-dom';
-import descriptions from '../../redux/store/description';
 
 class Header extends Component { 
     state = {
@@ -10,30 +9,30 @@ class Header extends Component {
         location: ''
     }
     
-    componentDidMount() {
-        this.findDescription(this.props.location.pathname)
-    }
-    componentDidUpdate(prevValue) {
-        if(prevValue !== this.props) {
-            this.findDescription(this.props.location.pathname)
-        }
-    }
+    // componentDidMount() {
+    //     this.findDescription(this.props.location.pathname)
+    // }
+    // componentDidUpdate(prevValue) {
+    //     if(prevValue !== this.props) {
+    //         this.findDescription(this.props.location.pathname)
+    //     }
+    // }
 
 
-    findDescription = (event) => {
-        descriptions.find(desc => {
-            for(let key in desc) {
-                let __tempString = '/' + key
-                if(event === '/' && key === 'home') {
-                    this.setState({description: desc[key]})
+    // findDescription = (event) => {
+    //     descriptions.find(desc => {
+    //         for(let key in desc) {
+    //             let __tempString = '/' + key
+    //             if(event === '/' && key === 'home') {
+    //                 this.setState({description: desc[key]})
                     
-                }
-                if(__tempString === event) {
-                    this.setState({description: desc[key]})
-                }
-            }
-        })
-    }
+    //             }
+    //             if(__tempString === event) {
+    //                 this.setState({description: desc[key]})
+    //             }
+    //         }
+    //     })
+    // }
 
     render() {
         return (

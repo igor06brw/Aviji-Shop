@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Register from '../components/Auth/Register/Register';
-import Login from '../components/Auth/Login/Login';
-import Logout from '../components/Auth/Logout/Logout';
+import Register from '../components/Register/Register';
+import Login from '../components/Login/Login';
+import Logout from '../components/Logout/Logout';
 import { connect } from 'react-redux';
 
 class Auth extends Component {

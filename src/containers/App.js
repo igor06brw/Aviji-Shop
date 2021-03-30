@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { connect } from 'react-redux';
-import ProductDetail from "../components/Products/ProductDetails/ProductDetails";
+import ProductDetail from "../components/ProductDetails/ProductDetails";
 import Products from './Products';
 import Auth from "./Auth";
 import Footer from "../components/Footer/Footer";

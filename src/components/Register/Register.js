@@ -1,6 +1,5 @@
 import React, { createRef } from 'react';
 import { connect } from "react-redux";
-import { register } from "../../../redux/actions/auth"
 import cogoToast from 'cogo-toast';
 
 const Register = ({ register, history }) => {
@@ -73,4 +72,4 @@ const Register = ({ register, history }) => {
     );
 }
 
-export default connect(null, { register })(Register)
+export default Register

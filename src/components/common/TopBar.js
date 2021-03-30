@@ -29,9 +29,9 @@ const Topbar = (props) => {
                         <Link to="/auth" className="nav-link text-light">Logout</Link>
                         <Link to="/shopping" className="nav-link text-light bg-success" aria-disabled="true">
                         <i className="fas fa-shopping-cart"></i>
-                        { 
+                        {/* { 
                             shopping.length === 0 ? <span className="empty ml-2">Empty</span> : <span className="empty ml-2 font-bold">( {shopping.length} )</span> 
-                        }
+                        } */}
                         </Link>
                     </>
                 )

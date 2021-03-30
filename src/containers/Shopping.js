@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ShoppingItem from '../components/Shopping/ShoppingItem/ShoppingItem';
-import ShoppingOrder from '../components/Shopping/ShoppingOrder/ShoppingOrder';
+import ShoppingItem from '../components/ShoppingItem/ShoppingItem';
+import ShoppingOrder from '../components/ShoppingOrder/ShoppingOrder';
 import { connect } from 'react-redux';
 
 class Shopping extends Component {

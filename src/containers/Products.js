@@ -1,34 +1,31 @@
 import React, { Component } from 'react';
-import Product from '../components/Products/Product/Product';
+import Product from '../components/Product/Product';
 import ReactPaginate from 'react-paginate';
 import { Link } from 'react-router-dom'
 import '../styles/Products.css';
 import { connect } from 'react-redux';
-import { db } from '../firebase/auth/db'
-import { fetchOutfits } from '../redux/actions/outfits';
 
 class Products extends Component {
     
     state = {
         products: [],
-        products1: [],
         offset: 0,
         perPage: 6,
         currentPage: 0
     }
 
-    getAllProductsFromDB() {
-        fetchOutfits();
-        // const store = db.collection('outfits').onSnapshot(snapshot => {
-        //     const products = snapshot.docs.map(doc => ({
-        //         id: doc.id,
-        //         ...doc.data()
-        //     }));
-        //     this.setState({products1: products})
-        //     console.log(this.state.products1)
-        //     console.log(this.props.outfit.outfits)
-        // })
-    }
+    // getAllProductsFromDB() {
+    //     fetchOutfits();
+    //     // const store = db.collection('outfits').onSnapshot(snapshot => {
+    //     //     const products = snapshot.docs.map(doc => ({
+    //     //         id: doc.id,
+    //     //         ...doc.data()
+    //     //     }));
+    //     //     this.setState({products1: products})
+    //     //     console.log(this.state.products1)
+    //     //     console.log(this.props.outfit.outfits)
+    //     // })
+    // }
 
     componentDidMount() {
         console.log(this.props)
@@ -91,5 +88,6 @@ class Products extends Component {
     }
 }
 
-const mapStateToProps = state => ({ outfit: state.outfit })
+const mapDispatchToProps = dispatch => ({})
+const mapStateToProps = state => ({ product: state.product })
 export default connect(mapStateToProps)(Products);

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../../styles/ShoppingItem.css';
+import '../../styles/ShoppingItem.css';
 import { useDispatch } from 'react-redux';
-import { removeFromShoppingList } from '../../../redux/actions/shopping';
 
 const ShoppingItem = (props) => {
     const dispatch = useDispatch();
@@ -18,7 +17,7 @@ const ShoppingItem = (props) => {
             <td headers="price">${props.shoppingCart.price}</td>
             <td headers="quantity">{props.shoppingQuantity.qty}</td>
             <td headers="actions">
-                <Link className="btn btn-danger" onClick={() => dispatch(removeFromShoppingList(props.shoppingCart)) }>Delete</Link>
+                {/* <Link className="btn btn-danger" onClick={() => dispatch(removeFromShoppingList(props.shoppingCart)) }>Delete</Link> */}
             </td>
         </tr>
     );
