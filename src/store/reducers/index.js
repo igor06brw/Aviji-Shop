@@ -1,11 +1,11 @@
-import {combineReducers} from "redux";
-
+import { combineReducers } from "redux";
 import authReducer from "./authReducer";
-import productReducer from "./productReducer";
+import outfitReducer from "./outfitReducer";
+import { firebaseReducer } from "react-redux-firebase";
 
-const rootReducer = combineReducers({
-    product : productReducer,
-    auth : authReducer,
+
+export default combineReducers({
+  firebase: firebaseReducer,
+  auth: authReducer,
+  outfit: outfitReducer,
 });
-
-export default rootReducer;

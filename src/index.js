@@ -5,21 +5,29 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import App from './containers/App';
+// CREATE REDUX
 import { Provider } from 'react-redux';
-import { ReactReduxFirebaseProvider, firebaseReducer } from 'react-redux-firebase'
-import configureStore from './store/store';
-import firebase from 'firebase/app';
-import { rrfConfig, runFirebase }from './firebase/config';
+import { createStore, applyMiddleware, compose } from "redux";
+import rootReducer from "./store/reducers";
+import thunk from "redux-thunk";
 
-const store = configureStore;
+// ENHANCING STORE WITH FIREBASE
+import { ReactReduxFirebaseProvider, getFirebase } from 'react-redux-firebase'
+import firebase from "./firebase/config";
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  rootReducer,
+  composeEnhancers(
+    applyMiddleware(thunk.withExtraArgument({ getFirebase }))
+  )
+)
 export const rrfProps = {
   firebase,
-  config: rrfConfig,
+  config: {},
   dispatch: store.dispatch
   // createFirestoreInstance // <- needed if using firestore
 }
-runFirebase();
 
 const app = (
   <Provider store={store}>

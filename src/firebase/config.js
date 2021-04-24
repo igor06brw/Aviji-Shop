@@ -1,19 +1,15 @@
-import firebase from 'firebase/app';
+import firebase from "firebase/app";
 import 'firebase/auth';
 
-
 const firebaseConfig = {
-  apiKey: "AIzaSyA7lR6aKhS1dgDlEcAmulFuBv_IsZkxBSo",
-  authDomain: "auth-development-1fce5.firebaseapp.com",
-  projectId: "auth-development-1fce5",
-  storageBucket: "auth-development-1fce5.appspot.com",
-  messagingSenderId: "839995841672",
-  appId: "1:839995841672:web:65657cd4b0eba8df06d33d"
+  apiKey: "AIzaSyBqiQ5PZ9RLU4g99JI3vZjj6X_WK9-6j5Q",
+  authDomain: "test-project-31aa6.firebaseapp.com",
+  projectId: "test-project-31aa6",
+  storageBucket: "test-project-31aa6.appspot.com",
+  messagingSenderId: "841132426263",
+  appId: "1:841132426263:web:a08a6f697dfad0071b8852"
 };
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-export const rrfConfig = {
-  userProfile: 'users'
-  // useFirestoreForProfile: true // Firestore for Profile instead of Realtime DB
-}
-  
-export const runFirebase = () => firebase.initializeApp(firebaseConfig)
+export default firebase;

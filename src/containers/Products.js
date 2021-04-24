@@ -29,11 +29,12 @@ class Products extends Component {
 
     componentDidMount() {
         console.log(this.props)
-        this.getAllProducts(this.props.outfit);
-        this.getAllProductsFromDB(this.props.outfit)
+        this.getAllProducts(this.props.outfit.outfits);
+        // this.getAllProductsFromDB(this.props.outfit)
     }
 
     getAllProducts(props) {
+        console.log(this.props)
         const products = props;
         const slice = products.slice(this.state.offset, this.state.offset + this.state.perPage);
         const productsPerPage = slice.map(el => <Product product={el}/>)
@@ -89,5 +90,5 @@ class Products extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({})
-const mapStateToProps = state => ({ product: state.product })
+const mapStateToProps = state => ({ outfit: state.outfit })
 export default connect(mapStateToProps)(Products);
